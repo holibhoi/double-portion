@@ -2,63 +2,195 @@ body{
     background-color: #fff8f0;
     font-family: sans-serif;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-h2{
-    color: #d9534f;
-    text-align: center;
+header{
+    width: 100%;
+    height: 70px;
+    background-color: #003e8f;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
-section{
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px lightgray;
+#check{
+    display: none;
 }
 
-section img{
-    width: 150px;
-    height: 150px;
-    margin: 10px;
-    border-radius: 10px;
-}
-
-image-grid{
+nav{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 0 20px;
+    font-size: 18px;
+    line-height: 18px;
 }
 
-p{
-    color: blue;
-    font-size: 30px;
+.logo img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.checkBtn{
+    display: none;
+}
+
+.links a{
+color: white;
+text-decoration: none;
+margin-right: 20px;
+padding: 7px 13px;
+transition: 0.5s;
+border-radius: 3px;
+}
+
+.links a.active,
+.links a:hover{
+    background-color: #1b9bff;
+}
+
+/* Responsive Design */
+
+@media (max-width:639px){
+    .checkBtn{
+        display: flex;
+        color: #ffcc29;
+        font-size: 30px;
+        margin-left: 20px;
+    }
+
+    .links{
+        position: fixed;
+        top: 70px;
+        width: 100%;
+        height: 100vh;
+        background-color: #2c3e50;
+        left: -100%;
+        transition: all 0.5s;
+    }
+
+    .links a{
+        display: block;
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    #check{
+        display: flex;
+    }
+
+    #check:checked ~ .links{
+        left: 0;
+    }
+}
+
+
+@media (max-width: 400px){
+    .images{
+        padding: 10px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .images img{
+        width: 100%;
+        aspect-ratio: 1/1; /* 1/1 is a square, other options 4/3, 16/9 */
+        object-fit: cover;
+    }
+}
+
+@media (401px <= width <= 639px){
+    .images{
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .images img{
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+}
+
+
+@media (640px <= width <= 767px){
+    .images{
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .images img{
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+}
+
+
+@media (min-width: 1024){
+    .images{
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .images img{
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+}
+
+
+/* counter section */
+.counter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1A2E05;
+    color: #9bdb56;
+    border-radius: 0 40px 0 40px;
+    padding: 40px;
+    margin: 20px 0px 40px 0px;
+}
+
+.label{
+    margin-bottom: 5px;
+    font-size: 40px;
+    color: #9bdb56;
     font-weight: bold;
 }
 
-footer{
-background-color: #d9534f;
-color: white;
-text-align: center;
-padding: 20px;
-margin-top: 30px;
+.buttons{
+    background-color: #9BDB56;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-footer a{
-    color: yellow;
-    text-decoration: none;
-    margin: 0 5px;
-}
-
-
-.box{
-    width: 800px;
-    height: 800px;
-    background-color: blueviolet;
-}
-
-.box p{
-    color: white;
-    font-size: 16px;
+button{
+    padding: 5px;
+    font-weight: bold;
+    font-size: 15px;
 }
