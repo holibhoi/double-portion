@@ -142,8 +142,24 @@ border-radius: 3px;
     }
 }
 
+@media (768px <= width <= 1023px){
+    .images{
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
 
-@media (min-width: 1024){
+    .images img{
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+}
+
+
+
+@media (min-width: 1024px){
     .images{
         padding: 10px;
         display: grid;
