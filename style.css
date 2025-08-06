@@ -87,7 +87,7 @@ border-radius: 3px;
     }
 
     #check{
-        display: flex;
+        /* display: flex; */
     }
 
     #check:checked ~ .links{
